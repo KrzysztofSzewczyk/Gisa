@@ -39,7 +39,7 @@ void syntax_error() {
 }
 
 void next_ch() {
-	col++;
+    col++;
     ch = getchar();
 }
 
@@ -59,10 +59,10 @@ again:
             if(ch != '"') {
                 syntax_error();
             }
-		case '"':
-			if(sym != ASM)
-				sym = STRING;
-			
+        case '"':
+            if(sym != ASM)
+                sym = STRING;
+            
             next_ch();
 
             while(ch != '"') {
@@ -74,15 +74,15 @@ again:
 
             next_ch();
             break;
-		case '\'':
-			sym = INT;
-			next_ch();
-			int_val = ch;
-			next_ch();
-			if(ch != '\'')
-				syntax_error();
-			next_ch();
-			break;
+        case '\'':
+            sym = INT;
+            next_ch();
+            int_val = ch;
+            next_ch();
+            if(ch != '\'')
+                syntax_error();
+            next_ch();
+            break;
         case '(': next_ch(); sym = LPAR; break;
         case ')': next_ch(); sym = RPAR; break;
         case '{': next_ch(); sym = LBRA; break;
@@ -193,8 +193,8 @@ node * tree_contents(int type) {
             if(!n->o[idx]->s) abort();
             strcpy(n->o[idx++]->s, id_name);
         }
-		
-		else if(sym == STRING) {
+        
+        else if(sym == STRING) {
             n->o[idx] = new_node(0, P_ASM);
             n->o[idx]->s = malloc(strlen(id_name) + 1);
             if(!n->o[idx]->s) abort();
@@ -365,7 +365,7 @@ int gentree(node * x, int c0) {
         case P_ASM:
             printf("%s\n", x->o[c0]->s);
             break;
-		case STRING:
+        case STRING:
             printf("txt \"%s\"\ndb_ 0\n", x->o[c0]->s);
             break;
         default:
