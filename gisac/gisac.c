@@ -288,6 +288,12 @@ void dump_ast(node * n, int indent) {
         fprintf(stderr, "[NULL node]\n");
 }
 
+/* Optimizer, kinda */
+
+node * opt(node * n) {
+	return n;
+}
+
 /* Code generator. */
 
 #define CODE_OFFSET 4
@@ -527,7 +533,7 @@ void c(node * x) {
 /* Stub */
 
 int main() {
-    c(program());
+    c(opt(program()));
     return 0;
 } 
 
