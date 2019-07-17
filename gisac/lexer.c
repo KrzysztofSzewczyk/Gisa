@@ -20,6 +20,9 @@
 
 #include "lexer.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int ch = ' ', sym, int_val, line, col;
 char id_name[128];
 
