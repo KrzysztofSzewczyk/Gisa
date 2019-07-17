@@ -19,6 +19,10 @@
  */
 
 #include "parser.h"
+#include "lexer.h"
+
+#include <stdlib.h>
+#include <stdio.h>
 
 node * new_node(int size, int type) {
     node * x = malloc(sizeof(node));
