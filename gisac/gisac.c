@@ -19,6 +19,10 @@
  */
 
 #include <string.h>
+#include <stdio.h>
+
+#include "lexer.h"
+#include "parser.h"
 
 /* Optimizer, kinda */
 
@@ -96,7 +100,7 @@ int gentree(node * x, int c0) {
             }
             
             if(!c2) {
-                fprintf(stderr, "Macro not found: %s\n", globs[c1].name);
+                fprintf(stderr, "Macro not found: %s\n", x->o[c0]->s);
                 abort();
             }
             break;

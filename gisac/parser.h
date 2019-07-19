@@ -21,6 +21,8 @@
 #ifndef __PARSER_H_
 #define __PARSER_H_
 
+#include <stddef.h>
+
 enum {
     PROGRAM, TREE, P_OPERATOR, P_ID, P_KEY, P_ICONST, P_ASM
 };

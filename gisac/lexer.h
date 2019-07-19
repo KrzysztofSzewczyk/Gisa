@@ -21,6 +21,8 @@
 #ifndef __LEXER_H_
 #define __LEXER_H_
 
+#include <stddef.h>
+
 enum {
     DEFMACRO_SYM, DEFUN_SYM, EXPORTS_SYM, INVOKE_SYM,
 	LOOP_SYM, WHILE_SYM, EQ_SYM, NEQ_SYM, OUTB_SYM, INB_SYM, /* Keywords */
@@ -37,7 +39,7 @@ static const char * words[] = {
 	"do", "while", "eq", "neq", "outb", "inb", NULL
 };
 
-extern int ch = ' ', sym, int_val, line, col;
+extern int ch, sym, int_val, line, col;
 extern char id_name[128];
 
 void syntax_error();
